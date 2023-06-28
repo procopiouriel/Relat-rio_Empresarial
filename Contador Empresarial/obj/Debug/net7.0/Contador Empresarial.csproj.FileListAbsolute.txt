@@ -1,0 +1,27 @@
+/Users/urielprocopio/Projects/Contador Empresarial/Contador Empresarial/obj/Debug/net7.0/Contador Empresarial.csproj.AssemblyReference.cache
+/Users/urielprocopio/Projects/Contador Empresarial/Contador Empresarial/obj/Debug/net7.0/Contador Empresarial.GeneratedMSBuildEditorConfig.editorconfig
+/Users/urielprocopio/Projects/Contador Empresarial/Contador Empresarial/obj/Debug/net7.0/Contador Empresarial.AssemblyInfoInputs.cache
+/Users/urielprocopio/Projects/Contador Empresarial/Contador Empresarial/obj/Debug/net7.0/Contador Empresarial.AssemblyInfo.cs
+/Users/urielprocopio/Projects/Contador Empresarial/Contador Empresarial/obj/Debug/net7.0/Contador Empresarial.csproj.CoreCompileInputs.cache
+/Users/urielprocopio/Projects/Contador Empresarial/Contador Empresarial/bin/Debug/net7.0/Contador Empresarial
+/Users/urielprocopio/Projects/Contador Empresarial/Contador Empresarial/bin/Debug/net7.0/Contador Empresarial.deps.json
+/Users/urielprocopio/Projects/Contador Empresarial/Contador Empresarial/bin/Debug/net7.0/Contador Empresarial.runtimeconfig.json
+/Users/urielprocopio/Projects/Contador Empresarial/Contador Empresarial/bin/Debug/net7.0/Contador Empresarial.dll
+/Users/urielprocopio/Projects/Contador Empresarial/Contador Empresarial/bin/Debug/net7.0/Contador Empresarial.pdb
+/Users/urielprocopio/Projects/Contador Empresarial/Contador Empresarial/obj/Debug/net7.0/Contador Empresarial.dll
+/Users/urielprocopio/Projects/Contador Empresarial/Contador Empresarial/obj/Debug/net7.0/refint/Contador Empresarial.dll
+/Users/urielprocopio/Projects/Contador Empresarial/Contador Empresarial/obj/Debug/net7.0/Contador Empresarial.pdb
+/Users/urielprocopio/Projects/Contador Empresarial/Contador Empresarial/obj/Debug/net7.0/Contador Empresarial.genruntimeconfig.cache
+/Users/urielprocopio/Projects/Contador Empresarial/Contador Empresarial/obj/Debug/net7.0/ref/Contador Empresarial.dll
+/Users/urielprocopio/Projects/Contador Empresarial/Contador Empresarial/bin/Debug/net7.0/Discord.Net.Commands.dll
+/Users/urielprocopio/Projects/Contador Empresarial/Contador Empresarial/bin/Debug/net7.0/Discord.Net.Core.dll
+/Users/urielprocopio/Projects/Contador Empresarial/Contador Empresarial/bin/Debug/net7.0/Discord.Net.Interactions.dll
+/Users/urielprocopio/Projects/Contador Empresarial/Contador Empresarial/bin/Debug/net7.0/Discord.Net.Rest.dll
+/Users/urielprocopio/Projects/Contador Empresarial/Contador Empresarial/bin/Debug/net7.0/Discord.Net.Webhook.dll
+/Users/urielprocopio/Projects/Contador Empresarial/Contador Empresarial/bin/Debug/net7.0/Discord.Net.WebSocket.dll
+/Users/urielprocopio/Projects/Contador Empresarial/Contador Empresarial/bin/Debug/net7.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+/Users/urielprocopio/Projects/Contador Empresarial/Contador Empresarial/bin/Debug/net7.0/Newtonsoft.Json.dll
+/Users/urielprocopio/Projects/Contador Empresarial/Contador Empresarial/bin/Debug/net7.0/System.Interactive.Async.dll
+/Users/urielprocopio/Projects/Contador Empresarial/Contador Empresarial/bin/Debug/net7.0/System.Linq.Async.dll
+/Users/urielprocopio/Projects/Contador Empresarial/Contador Empresarial/bin/Debug/net7.0/System.Reactive.dll
+/Users/urielprocopio/Projects/Contador Empresarial/Contador Empresarial/obj/Debug/net7.0/Contador Empresarial.csproj.CopyComplete
