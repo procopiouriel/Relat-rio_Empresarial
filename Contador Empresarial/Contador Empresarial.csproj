@@ -12,6 +12,6 @@
     <Compile Remove="testes.cs" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Discord.Net" Version="3.10.0" />
+    <PackageReference Include="Discord.Net" Version="3.11.0" />
   </ItemGroup>
 </Project>

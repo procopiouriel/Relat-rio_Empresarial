@@ -1,24 +1,29 @@
-﻿using System.Threading.Channels;
+﻿using System;
+using System.Reflection;
+using System.Threading.Channels;
 using Discord;
+using Discord.Commands;
 using Discord.WebSocket;
 
 public class DiscordBot
 {
     private DiscordSocketClient _client;
-   
+    public string caminho2;
+    
 
     public async Task RunAsync()
     {
         _client = new DiscordSocketClient();
-        
 
         _client.Log += Log;
        _client.MessageReceived += HandleMessageReceived;
 
-        await _client.LoginAsync(TokenType.Bot, "MTA3MTE4MTM3NzcyODQzNDI4Ng.GECY9F.ON864y2-N8Xmp-pmrRpShkSm27sNUrRrFbwV1w");
+        await _client.LoginAsync(TokenType.Bot, "MTA3MTE4MTM3NzcyODQzNDI4Ng.G3Zbgq.qPGvoJJF8XsCsJgiMb-SizCsB3NKmvq77OXAIc");
         await _client.StartAsync();
 
         await Task.Delay(-1);
+
+      
     }
 
     private Task Log(LogMessage arg)
@@ -27,52 +32,34 @@ public class DiscordBot
         return Task.CompletedTask;
     }
 
-    private async Task HandleMessageReceived(SocketMessage arg)
-    {
-        if (arg.Author.IsBot) return;
-
-        var channel = arg.Channel as SocketTextChannel;
-        
-
-        
-    }
-
-    public async void Retorno(SocketMessage arg)
+    public async Task HandleMessageReceived(SocketMessage arg)
     {
         try
         {
+        voltar:
             Leitor conexao = new Leitor();
-            conexao.Ler();
-            var channel = arg.Channel as SocketTextChannel;
+            conexao.Ler(caminho2);
 
-            while (true)
+
+            if (arg.Author.IsBot) return;
+            var channel1 = arg.Channel as SocketTextChannel;
+           
+
+            for (int i = 0; i < conexao.GetNomes().Length; i++)
             {
-                voltar:
-                string mensagemNick = "";
-                string mensagemHoras = "";
-                
-                for (int i = 0; i <= conexao.nomeArray.Length; i++)
+                while (conexao.nomeArray[i] != null)//AS POSICOES OCUPADAS
                 {
-                    if (conexao.nomeArray[i] != null)//SE O ARRAY TIVER ALGUM PLAYER
-                    {
-                        Console.WriteLine(conexao.GetNomes()[i]);
-                        
-                        await channel.SendMessageAsync(conexao.GetNomes()[i]);
-
-                    }
-                    
-                    conexao.nomeArray[i] = null;
-                    Console.WriteLine("As posicoes " + i + " foram zeradas.");
-                    
+                    await channel1.SendMessageAsync(conexao.GetNomes()[i]);
+                    conexao.Retorno(i);
                 }
-                
             }
-            Console.WriteLine("TESTE");
-
+           
+            goto voltar;
         }
         catch (Exception e)
         {
-            Console.WriteLine(" ERRORRR: " + e.Message);
+            Console.WriteLine("ERROR DISCORD: " + e.Message);
         }
     }
+
 }
