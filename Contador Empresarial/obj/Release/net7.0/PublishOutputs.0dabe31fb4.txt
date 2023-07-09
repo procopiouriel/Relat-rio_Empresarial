@@ -1,0 +1,16 @@
+/Users/urielprocopio/Documents/Minhas Aplicações/Contador Empresarial
+/Users/urielprocopio/Documents/Minhas Aplicações/Contador Empresarial.dll
+/Users/urielprocopio/Documents/Minhas Aplicações/Contador Empresarial.deps.json
+/Users/urielprocopio/Documents/Minhas Aplicações/Contador Empresarial.runtimeconfig.json
+/Users/urielprocopio/Documents/Minhas Aplicações/Contador Empresarial.pdb
+/Users/urielprocopio/Documents/Minhas Aplicações/Discord.Net.Commands.dll
+/Users/urielprocopio/Documents/Minhas Aplicações/Discord.Net.Core.dll
+/Users/urielprocopio/Documents/Minhas Aplicações/Discord.Net.Interactions.dll
+/Users/urielprocopio/Documents/Minhas Aplicações/Discord.Net.Rest.dll
+/Users/urielprocopio/Documents/Minhas Aplicações/Discord.Net.Webhook.dll
+/Users/urielprocopio/Documents/Minhas Aplicações/Discord.Net.WebSocket.dll
+/Users/urielprocopio/Documents/Minhas Aplicações/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+/Users/urielprocopio/Documents/Minhas Aplicações/Newtonsoft.Json.dll
+/Users/urielprocopio/Documents/Minhas Aplicações/System.Interactive.Async.dll
+/Users/urielprocopio/Documents/Minhas Aplicações/System.Linq.Async.dll
+/Users/urielprocopio/Documents/Minhas Aplicações/System.Reactive.dll

@@ -25,5 +25,7 @@ class ContadorEmpresarial
             bot.caminho2 = caminho;
             await bot.RunAsync();
         }
+
+        Console.ReadKey();
     }
 }

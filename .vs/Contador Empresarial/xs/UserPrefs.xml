@@ -1,26 +1,25 @@
 ﻿<Properties StartupConfiguration="{2719DA45-F08A-48E7-B2F4-560E59CBC248}|Default">
-  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.Contador_220Empresarial PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Contador Empresarial/Leitor.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Contador Empresarial/Discord.cs">
     <Files>
-      <File FileName="Contador Empresarial/Leitor.cs" Line="50" Column="1" />
-      <File FileName="Contador Empresarial/Discord.cs" Line="43" Column="47" />
-      <File FileName="Contador Empresarial/Program.cs" Line="14" Column="11" />
-      <File FileName="Contador Empresarial/Banco De Dados.cs" />
+      <File FileName="Contador Empresarial/Leitor.cs" Line="50" Column="32" />
+      <File FileName="Contador Empresarial/Discord.cs" Line="58" Column="10" />
+      <File FileName="Contador Empresarial/Program.cs" Line="29" Column="27" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="Contador Empresarial">
-            <Node name="Contador Empresarial" expanded="True" />
+          <Node name="Contador Empresarial" expanded="True">
+            <Node name="Contador Empresarial" selected="True" />
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

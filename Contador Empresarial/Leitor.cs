@@ -31,6 +31,9 @@ public class Leitor
                             string nickPlayer = linha.Split(" ")[4];//NICK DO PLAYER
                             string horaPlayer = linha.Split(" ")[0];//HORARIO DO ALUGUEL
 
+                            sr.Close();
+                            sr.Dispose();
+
                             for (int i = 0; i < nomeArray.Length; i++)
                             {
                                 while (nomeArray[i] != null)//OCUPADO
@@ -58,20 +61,35 @@ public class Leitor
     {
         try
         {
-            string[] linhas = File.ReadAllLines(filePath);
-
-            for (int i = 0; i <= linhas.Length; i++)
+            using (StreamReader sr = new StreamReader(filePath))
             {
-                if (linhas[i].Contains(palavra))
+                string linha;
+                while ((linha = sr.ReadLine()) != null)
                 {
-                    linhas[i] = null;
-                    File.WriteAllLines(filePath, linhas);
-                    //Console.WriteLine("A linha contendo a palavra '{0}' foi removida do arquivo.", palavra);
-                    return;
+                    if (linha.Contains(palavra))
+                    {
+                        sr.Close();
+                        sr.Dispose();
+
+                        string[] linhas = File.ReadAllLines(filePath);
+
+                        for (int i = 0; i < linhas.Length; i++)
+                        {
+                            if (linhas[i].Contains(palavra))
+                            {
+                                linhas[i] = null;
+                                File.WriteAllLines(filePath, linhas);
+
+                                Console.WriteLine("A linha contendo a palavra '{0}' foi removida do arquivo.", palavra);
+                                return;
+                            }
+                        }
+
+                        Console.WriteLine("Nenhuma linha contendo a palavra '{0}' foi encontrada no arquivo.", palavra);
+                        return;
+                    }
                 }
             }
-
-            //Console.WriteLine("Nenhuma linha contendo a palavra '{0}' foi encontrada no arquivo.", palavra);
 
         }
         catch (Exception e)
