@@ -4,13 +4,15 @@ using Discord.WebSocket;
 public class Leitor
 {
     public string[] nomeArray = new string[100];
+    public string motivo;
     public string caminho;
 
     public void Ler(string caminho)
     {
         try
         {
-            string palavra = "contratou";
+            string palavra = "[INFO] Voce tirou os Explosivos de";
+            string palavra1 = "[INFO] Voce tirou as Drogas de";
             string linhaEncontrada = "";
             string path = caminho;
             string codigo = linhaEncontrada;
@@ -22,17 +24,13 @@ public class Leitor
                 while ((linha = sr.ReadLine()) != null)
                 {
 
-                    if (linha.Contains(palavra))
+                    if (linha.Contains(palavra) || linha.Contains(palavra1))
                     {
-                        int contador = 0;
                         linhaEncontrada = linha;
-                        if (linha.Contains("para a empresa"))
-                        {
-                            string nickPlayer = linha.Split(" ")[4];//NICK DO PLAYER
-                            string horaPlayer = linha.Split(" ")[0];//HORARIO DO ALUGUEL
+                        
+                            string nickMeliante = linha.Split(" ")[7];//NICK DO BANDIDO
+                            string horaApreensao = linha.Split(" ")[0];//HORARIO DA PRISAO
 
-                            sr.Close();
-                            sr.Dispose();
 
                             for (int i = 0; i < nomeArray.Length; i++)
                             {
@@ -40,12 +38,28 @@ public class Leitor
                                 {
                                     i++;
                                 }
-                                nomeArray[i] = nickPlayer + " " + horaPlayer;
-                                //Console.WriteLine(nickPlayer + " foi adicionado na posicao " + i);
-                                RemoverLinhaContendoPalavra(path, nickPlayer);
-                                break;
-                            }
+
+                                if (linha.Contains("Explosivos"))
+                                {
+                                    motivo = "Porte Ilegal de Explosivos (P.I.E)";
+                                    nomeArray[i] = "Meliante: " + nickMeliante + "\nHorario: " + horaApreensao + "\nMotivo: " + motivo;
+                                    Console.WriteLine(nickMeliante + " foi adicionado na posicao " + i);
+                                    sr.Close();
+                                    RemoverLinhaContendoPalavra(path, nickMeliante);
+                                    break;
+                                }
+                                else if (linha.Contains("Drogas"))
+                                {
+                                    motivo = "Trafico";
+                                    nomeArray[i] = " Meliante: " + nickMeliante + "\nHorario: " + horaApreensao + "\nMotivo: " + motivo;
+                                    Console.WriteLine(nickMeliante + " foi adicionado na posicao " + i);
+                                    sr.Close();
+                                    RemoverLinhaContendoPalavra(path, nickMeliante);
+                                    break;
+                                }
+
                         }
+                        
                     }
                 }
             }
@@ -61,35 +75,22 @@ public class Leitor
     {
         try
         {
-            using (StreamReader sr = new StreamReader(filePath))
+            string[] linhas = File.ReadAllLines(filePath);
+
+            for (int i = 0; i <= linhas.Length; i++)
             {
-                string linha;
-                while ((linha = sr.ReadLine()) != null)
+                if (linhas[i].Contains(palavra))
                 {
-                    if (linha.Contains(palavra))
-                    {
-                        sr.Close();
-                        sr.Dispose();
+                    linhas[i] = null;
+                    File.WriteAllLines(filePath, linhas);
+                    
+                    Console.WriteLine("A linha contendo a palavra '{0}' foi removida do arquivo.", palavra);
 
-                        string[] linhas = File.ReadAllLines(filePath);
-
-                        for (int i = 0; i < linhas.Length; i++)
-                        {
-                            if (linhas[i].Contains(palavra))
-                            {
-                                linhas[i] = null;
-                                File.WriteAllLines(filePath, linhas);
-
-                                Console.WriteLine("A linha contendo a palavra '{0}' foi removida do arquivo.", palavra);
-                                return;
-                            }
-                        }
-
-                        Console.WriteLine("Nenhuma linha contendo a palavra '{0}' foi encontrada no arquivo.", palavra);
-                        return;
-                    }
+                    return;
                 }
             }
+
+            Console.WriteLine("Nenhuma linha contendo a palavra '{0}' foi encontrada no arquivo.", palavra);
 
         }
         catch (Exception e)
@@ -104,7 +105,7 @@ public class Leitor
         try
         {
             nomeArray[posicao] = null;
-            //Console.WriteLine("As posicoes " + posicao + " foram zeradas.");
+            Console.WriteLine("As posicoes " + posicao + " foram zeradas.");
         }
         catch (Exception e)
         {

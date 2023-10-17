@@ -9,6 +9,7 @@ public class DiscordBot
 {
     private DiscordSocketClient _client;
     public string caminho2;
+    public static ulong idUser;
     
 
     public async Task RunAsync()
@@ -41,16 +42,33 @@ public class DiscordBot
             conexao.Ler(caminho2);
 
 
-            if (arg.Author.IsBot) return;
-            var channel1 = arg.Channel as SocketTextChannel;
+            //if (arg.Author.IsBot) return;
+            //var channel1 = arg.Channel as SocketTextChannel;
            
+
 
             for (int i = 0; i < conexao.GetNomes().Length; i++)
             {
                 while (conexao.nomeArray[i] != null)//AS POSICOES OCUPADAS
                 {
-                    await channel1.SendMessageAsync(conexao.GetNomes()[i]);
-                    conexao.Retorno(i);
+                    if (conexao.GetNomes()[i].Contains("Explosivos"))
+                    {
+                        var channel1 = _client.GetChannel(1162768111720730707) as SocketTextChannel;
+                        var userToMention = _client.GetUser(idUser);
+
+                        await channel1.SendMessageAsync($"Responsavel: {userToMention.Mention} \n" + conexao.GetNomes()[i]);
+                        conexao.Retorno(i);
+                    }
+                    if (conexao.GetNomes()[i].Contains("Trafico"))
+                    {
+                        var channel1 = _client.GetChannel(1162771309470683188) as SocketTextChannel;
+                        var userToMention = _client.GetUser(idUser);
+
+                        await channel1.SendMessageAsync($"Responsavel: {userToMention.Mention} \n" + conexao.GetNomes()[i]+"\n");
+                        conexao.Retorno(i);
+                    }
+
+
                 }
             }
            
